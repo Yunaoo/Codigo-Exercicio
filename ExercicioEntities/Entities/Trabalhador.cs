@@ -10,14 +10,17 @@ namespace ExercicioEntities
         public WorkerLevel Level { get; set; }
         public double SalarioBase { get; set; }
         public Departamento Departamento { get; set; }
-        public List<Contrato> Contratos { get; set; } = new List<Contrato>();
-        public Trabalhador() { }
+        public List<Contrato> Contratos { get; set; }
+        public Trabalhador() { 
+          Contratos = new List<Contrato>();
+        }
         public Trabalhador(string nome, WorkerLevel level, double salariobase, Departamento departamento)
         {
             Nome = nome;
             Level = level;
             SalarioBase = salariobase;
             Departamento = departamento;
+            Contratos = new List<Contrato>();
         }
         public void AddContrato(Contrato contrato)
         {
